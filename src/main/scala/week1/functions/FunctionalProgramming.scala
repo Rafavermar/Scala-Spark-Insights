@@ -25,33 +25,32 @@ object FunctionalProgramming extends App {
    * Each approach offers different benefits regarding readability, memory efficiency, and instance management, impacting performance and usage in various contexts.
    */
 
-  // Lazy initialization to prevent initialization order issues in Scala applications using the App trait.
   println("Demo: Lambda Function")
   lazy val sumLambda: (Int, Int) => Int = (a, b) => a + b
   val result1 = sumLambda(2, 3)
   println(s"Result of sumLambda: $result1\n")
 
-  // Example of a Higher-Order Function (HOF) that takes another function as an argument
+
   println("Demo: Higher-Order Function")
   def performOperation(a: Int, b: Int, operation: (Int, Int) => Int): Int = operation(a, b)
   val result2 = performOperation(2, 3, sumLambda)
   println(s"Result of performOperation: $result2\n")
 
-  // Function returning another function (demonstrating currying)
+
   println("Demo: Currying")
   def multiplyBy(factor: Int): Int => Int = (a: Int) => a * factor
   val triple = multiplyBy(3)
   val result3 = triple(3)
   println(s"Result of triple(3): $result3\n")
 
-  // Partially Applied Function
+
   println("Demo: Partially Applied Function")
   def sum(a: Int)(b: Int): Int = a + b
   lazy val addFive = sum(5)_
   val result4 = addFive(3)
   println(s"Result of addFive(3): $result4\n")
 
-  // Using function composition to multiply a list of integers
+
   println("Demo: Function Composition")
   def multiplyList(nums: List[Int])(factor: Int): List[Int] = nums.map(_ * factor)
   val doubledList = multiplyList(List(1, 2, 3))(2)
@@ -68,6 +67,7 @@ object FunctionalProgramming extends App {
    * @param list2 The second list of integers.
    * @return A list containing the sum of corresponding elements from list1 and list2.
    */
+
   println("Demo: Lists Sum")
   def sumLists(list1: List[Int], list2: List[Int]): List[Int] = {
     list1.zip(list2).map { case (a, b) => a + b }

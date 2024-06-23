@@ -1,15 +1,27 @@
 package week1.advancedfeatures.packageobjects
 
 /**
- * The `utils` package object in Scala is a centralized location to define functions, constants,
- * type aliases, and implicit conversions accessible across the `week1.advanced_features.package objects.utils` package.
- * It helps maintain organized and DRY (Don't Repeat Yourself) code by providing commonly used utilities.
- * Package objects are designed to hold functions, constants, type aliases, and implicit conversions that should be accessible across all classes
- * and objects within the same package.
- * They are typically not meant to replace the import statements but to simplify the access to common functionalities within a package.
- * The members of a package object are accessible in the package without needing to import them explicitly if you are within the same package.
+ * The `utils` package object in Scala serves as a centralized location to define functions, constants,
+ * type aliases, and implicit conversions accessible across the `week1.advanced_features.packageobjects.utils` package.
+ * This design aids in maintaining organized and DRY (Don't Repeat Yourself) code by offering commonly used utilities,
+ * facilitating easier and more consistent access across the package.
+ *
+ * Package objects are particularly useful for simplifying access to common functionalities within a package,
+ * reducing the need for repetitive imports. Members of a package object are accessible throughout the package
+ * without needing explicit imports if you are within the same package scope.
+ *
+ * Additionally, this package object demonstrates the use of case classes within the package context,
+ * which are ideal for modeling immutable data. Case classes provide a concise way to define classes and
+ * are beneficial for patterns like matching, which are frequently used in functional programming.
+ *
+ * @example Case class for representing financial accounts:
+ *          {{{
+ *          // A case class to represent a financial account, typically used to model data succinctly and immutably.
+ *          case class Account(id: AccountID, balance: Balance)
+ *          }}}
+ *          This case class includes automatic support for equality checks, copying, and has automatically generated
+ *          toString methods which are useful for logging and debugging purposes within utilities managed here.
  */
-
 package object utils {
   /**
    * Logs a message to the console, demonstrating how package objects can contain utility functions
@@ -32,10 +44,7 @@ package object utils {
    */
   def square(x: Double): Double = x * x
 
-  /**
-   * A type alias for a 2D matrix of doubles, showing how package objects can be used
-   * to simplify complex type notations and enhance code readability.
-   */
+
   type Matrix = List[List[Double]]
 
   /** Adds a function to calculate the determinant of a 2x2 matrix, enhancing the mathematical capabilities of the package.
@@ -51,19 +60,15 @@ package object utils {
     }
   }
 
-  // A type alias for a user profile in a simplified form, showing how to manage complex data structures.
   type UserProfile = Map[String, String]
 
-  // Constant for a sample user profile, demonstrating the use of type aliases for complex data.
   val sampleProfile: UserProfile = Map("name" -> "John Doe", "email" -> "john@example.com")
 
 
-  // New type aliases for financial operations
   type AccountID = String
   type Balance = Double
   type AccountMap = Map[AccountID, Balance]
 
-  // Case class to represent a financial account
   case class Account(id: AccountID, balance: Balance)
 
   /** Function to apply interest to all accounts in a map
