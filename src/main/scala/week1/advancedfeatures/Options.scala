@@ -1,4 +1,4 @@
-package week1.advanced_features
+package week1.advancedfeatures
 
 /**
  * Demonstrates the use of Scala's Option type to handle nullable expressions safely,

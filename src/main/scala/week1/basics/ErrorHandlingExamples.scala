@@ -4,7 +4,7 @@ import scala.Console.{GREEN, RED, RESET}
 import scala.util.{Failure, Success, Try}
 
 /**
- * Demonstrates exception handling and advanced use of options and tries,
+ * Exception handling and advanced use of options and tries,
  * showcasing foundational Scala error management techniques.
  */
 object ErrorHandlingExamples extends App {

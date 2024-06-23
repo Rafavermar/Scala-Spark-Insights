@@ -18,7 +18,7 @@ The first week was an intensive dive into Scala, covering a wide range of topics
    - ControlStructures - conditionals, loops, and pattern matching.
    - ErrorHandling - exception handling and advanced use of `Option` and `Try`.
    - Var / Val - mutable and immutable state management, the usage of case classes and functional programming techniques such as `tail recursion` and `foldLeft`
-2. **Advanced Features** - Options, TypeAliases, PackageObjects ([View Code](src/main/scala/week1/advanced_features)).
+2. **Advanced Features** - Options, TypeAliases, PackageObjects ([View Code](src/main/scala/week1/advancedfeatures)).
 3. **Scala Collections** - Exploring mutable and immutable collections. ([View Code](src/main/scala/week1/collections)).
 4. **Function Compositions** - Utilizing function chaining and compositions. ([View Code](src/main/scala/week1/functions)).
 5. **Configuration Management** - Managing app settings with Typesafe Config.
