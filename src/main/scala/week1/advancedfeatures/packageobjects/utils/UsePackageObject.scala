@@ -23,6 +23,11 @@ object UsePackageObject extends App {
     List(3.0, 4.0)
   )
   log(s"Using matrix: $matrix")
-}
-  log(s"Using matrix: $matrix")
+
+  // Using the determinant function to calculate the determinant of a 2x2 matrix.
+  val exampleMatrix: Matrix = List(List(1.0, 2.0), List(3.0, 4.0))
+  log(s"Determinant of the matrix: ${determinant(exampleMatrix)}")
+
+  // Utilizing the UserProfile type alias to handle user data.
+  log(s"Sample user profile: ${sampleProfile}")
 }
