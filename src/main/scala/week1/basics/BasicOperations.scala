@@ -1,7 +1,7 @@
 package week1.basics
 
 /**
- * Demonstrates basic Scala functionalities such as variable declarations,
+ * Basic Scala functionalities such as variable declarations,
  * arithmetic operations, and color-coded console outputs, to illustrate foundational
  * concepts in Scala programming.
  */

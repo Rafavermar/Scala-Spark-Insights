@@ -1,4 +1,4 @@
-package week1.advanced_features
+package week1.advancedfeatures
 
 /**
  * Demonstrates how type aliases can be used in Scala to simplify complex type definitions,

@@ -1,7 +1,7 @@
 package week1.basics
 
 /**
- * Demonstrates various control structures in Scala, focusing on conditionals,
+ * Various control structures in Scala, focusing on conditionals,
  * loops, and pattern matching.
  */
 object ControlStructures extends App {
