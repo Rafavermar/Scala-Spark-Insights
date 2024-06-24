@@ -26,7 +26,7 @@ The first week was an intensive dive into Scala, covering a wide range of topics
 7. **Generics** - Implementing generics for type-safe code.
 8. **Traits and Abstract Classes** - Using traits and abstract classes to design robust systems.
 9. **Validation** - 
-10. **Tests
+10. **Tests** 
 
 
 
