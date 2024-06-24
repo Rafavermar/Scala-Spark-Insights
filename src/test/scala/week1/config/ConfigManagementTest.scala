@@ -1,41 +1,47 @@
 package week1.config
 
 import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.BeforeAndAfterEach
 
-/**
- * Tests for the ConfigManagement object to ensure that the configuration
- * management functionality works as expected.
- */
-class ConfigManagementTest extends AnyFunSuite {
-  test("doSomeStuff should return true") {
-    println("Testing if doSomeStuff returns true...")
-    assert(ConfigManagement.doSomeStuff() === true)
+class ConfigManagementTest extends AnyFunSuite with BeforeAndAfterEach {
+
+  override def beforeEach(): Unit = {
+    assert(ConfigManagement.initConfig(), "Configuration should load successfully before tests")
   }
 
-  test("getApplicationName returns correct name") {
-    println(s"Testing if getAppName returns the expected name: ${ConfigManagement.getAppName}")
-    assert(ConfigManagement.getAppName == "Example of Config Usage")
+  test("getAppName returns the correct application name") {
+    println("Testing getAppName...")
+    assert(ConfigManagement.getAppName == "Example of Config Usage", "App name should be 'Example of Config Usage'")
+    println(s"getAppName passed: ${ConfigManagement.getAppName}")
   }
 
-  test("getApplicationVersion returns correct version") {
-    println(s"Testing if getAppVersion returns the expected version: ${ConfigManagement.getAppVersion}")
-    assert(ConfigManagement.getAppVersion == "1.0.0")
+  test("getAppVersion returns the correct application version") {
+    println("Testing getAppVersion...")
+    assert(ConfigManagement.getAppVersion == "1.0.0", "App version should be '1.0.0'")
+    println(s"getAppVersion passed: ${ConfigManagement.getAppVersion}")
   }
 
-  test("getCustomConfig returns correct custom configuration") {
-    println(s"Testing if getCustomConfig returns the expected custom configuration: ${ConfigManagement.getCustomConfig}")
-    assert(ConfigManagement.getCustomConfig == "customValue")
+  test("getCustomConfig returns the correct custom configuration value") {
+    println("Testing getCustomConfig...")
+    assert(ConfigManagement.getCustomConfig == "customValue", "Custom config should be 'customValue'")
+    println(s"getCustomConfig passed: ${ConfigManagement.getCustomConfig}")
   }
 
-  test("getIntList correctly retrieves the list of integers") {
-    println(s"Testing if getIntList correctly retrieves the list of integers: ${ConfigManagement.getIntList}")
-    assert(ConfigManagement.getIntList == List(1, 2, 3, 4, 5))
+  test("getIntList returns the correct list of integers") {
+    println("Testing getIntList...")
+    assert(ConfigManagement.getIntList == List(1, 2, 3, 4, 5), "Integer list should match [1, 2, 3, 4, 5]")
+    println(s"getIntList passed: ${ConfigManagement.getIntList}")
   }
 
-  test("hasSetting verifies existence of a configuration path") {
-    println("Testing if hasSetting correctly identifies the existence of 'app.name'...")
-    assert(ConfigManagement.hasSetting("app.name"))
-    println("Testing if hasSetting correctly identifies the non-existence of 'app.nonexistent'...")
-    assert(!ConfigManagement.hasSetting("app.nonexistent"))
+  test("hasSetting verifies the existence of a configuration path for 'app.custom'") {
+    println("Testing hasSetting for 'app.custom'...")
+    assert(ConfigManagement.hasSetting("app.custom"), "Configuration should have 'app.custom'")
+    println("hasSetting 'app.custom' passed.")
+  }
+
+  test("hasSetting verifies the non-existence of a non-existent configuration path") {
+    println("Testing hasSetting for 'app.nonexistent'...")
+    assert(!ConfigManagement.hasSetting("app.nonexistent"), "Configuration should not have 'app.nonexistent'")
+    println("hasSetting 'app.nonexistent' passed.")
   }
 }

@@ -21,7 +21,7 @@ The first week was an intensive dive into Scala, covering a wide range of topics
 2. **Advanced Features** - Options, TypeAliases, PackageObjects, Case Classes ([View Code](src/main/scala/week1/advancedfeatures)).
 3. **Scala Collections** - Exploring mutable and immutable collections. ([View Code](src/main/scala/week1/collections)).
 4. **Function Compositions** - Utilizing function chaining and compositions. ([View Code](src/main/scala/week1/functions)).
-5. **Configuration Management** - Managing app settings with Typesafe Config.
+5. **Configuration Management** - Managing app settings with Typesafe Config. ([View Code](src/main/scala/week1/config)).
 6. **Error Handling** - Strategies to manage errors gracefully.
 7. **Generics** - Implementing generics for type-safe code.
 8. **Traits and Abstract Classes** - Using traits and abstract classes to design robust systems.
