@@ -34,7 +34,7 @@ object ErrorHandlingExamples extends App {
   println()
 
 
-  // Demonstrating the use of Option for safer error handling
+  //  the use of Option for safer error handling
   println("Option:")
   def safeDivide(a: Int, b: Int): Option[Int] = if (b == 0) None else Some(a / b)
 

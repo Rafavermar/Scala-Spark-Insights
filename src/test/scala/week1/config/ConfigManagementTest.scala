@@ -3,8 +3,19 @@ package week1.config
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.BeforeAndAfterEach
 
+/**
+ * Test suite for ConfigManagement to ensure that all configuration-related functionality
+ * is working as expected.
+ *
+ * These tests are essential to verify that the application can correctly read and process
+ * the configuration settings as defined in application.conf.
+ */
 class ConfigManagementTest extends AnyFunSuite with BeforeAndAfterEach {
 
+  /**
+   * Ensures that the configuration is properly loaded before each test case is executed.
+   * This method uses assertions to guarantee that the initial configuration load is successful.
+   */
   override def beforeEach(): Unit = {
     assert(ConfigManagement.initConfig(), "Configuration should load successfully before tests")
   }
