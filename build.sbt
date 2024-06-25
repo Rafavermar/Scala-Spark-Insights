@@ -21,3 +21,4 @@ javaOptions ++= Seq(
 
 Test / fork := true
 Test / parallelExecution := false
+enablePlugins(JmhPlugin)

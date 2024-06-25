@@ -6,6 +6,7 @@ This repository documents my learning progress as a Data Engineering on Scala wi
 ## Table of Contents
 - [Week 1: Scala Collections, Error Handling, Configuration, and More](#week-1-scala-collections-error-handling-configuration-and-more)
 - [Environment Setup](#environment-setup)
+- [Benchmarking JMH](#benchmarking-jmh)
 - [Additional Resources](#additional-resources)
 - [About me](#about-me)
 
@@ -79,6 +80,38 @@ To ensure your Scala and Spark projects run smoothly in IntelliJ IDEA, especiall
       ```
     - Ensure the option "Add dependencies with 'provided' scope to classpath" is checked.
 
+## Benchmarking with JMH
+
+This section provides detailed instructions on how to set up and run benchmarks using Java Microbenchmark Harness (JMH) in this project.
+
+### Setup JMH
+
+1. **Add JMH Plugin to sbt**: Make sure that the JMH plugin is included in the `project/plugins.sbt`:
+   ```scala
+   addSbtPlugin("pl.project13.sbt" % "sbt-jmh" % "0.4.0")
+   
+2. **Enable JMH in build.sbt**: Add the following line to your `build.sbt` to enable the JMH plugin:
+   ```scala
+   enablePlugins(JmhPlugin)
+
+3. **Reload sbt Configuration**: Once the plugin is added, reload your sbt configuration to apply changes
+   ```bash
+   sbt
+   reload 
+   
+### Running Benchmarks
+
+To run the benchmarks, use the following command in the sbt console. This command initiates the JMH runner with specified parameters:
+
+```bash
+   sbt "jmh:run -i 10 -wi 10 -f1 -t1" 
+   ```
+Here is what each parameter means:
+
+- -i 10: Run 10 iterations for each benchmark.
+- -wi 10: Perform 10 warm-up iterations before actual measurements start.
+- -f1: Execute benchmarks in 1 fork. Separate JVM processes will isolate the benchmarks from each other.
+- -t1: Use one thread for benchmarking.
 
 ## Additional Resources
 
