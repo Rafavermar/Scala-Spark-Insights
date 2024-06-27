@@ -24,10 +24,9 @@ The first week was an intensive dive into Scala, covering a wide range of topics
 4. **Function Compositions** - Utilizing function chaining and compositions. ([View Code](src/main/scala/week1/functions)).
 5. **Configuration Management** - Managing app settings with Typesafe Config. ([View Code](src/main/scala/week1/config)).
 6. **Error Handling** - Strategies to manage errors gracefully. ([View Code](src/main/scala/week1/errors)).
-7. **Generics** - Implementing generics for type-safe code.
-8. **Traits and Abstract Classes** - Using traits and abstract classes to design robust systems. ([View Code](src/main/scala/week1/traits)).
-9. **Validation** - ensuring that the validation logic not only is correct but also performs well under various conditions. ([View Code](src/main/scala/week1/validations)).
-10. **Tests** - ([View Code](src/test)).
+7. **Traits and Abstract Classes** - Using traits and abstract classes to design robust systems. ([View Code](src/main/scala/week1/traits)).
+8. **Validation** - ensuring that the validation logic not only is correct but also performs well under various conditions. ([View Code](src/main/scala/week1/validations)).
+9. **Tests** - ([View Code](src/test)).
 
 
 

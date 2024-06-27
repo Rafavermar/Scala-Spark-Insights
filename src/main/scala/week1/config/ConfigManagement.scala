@@ -11,6 +11,8 @@ import scala.jdk.CollectionConverters._
  *
  * The configuration is loaded only once at the initialization phase to avoid redundant I/O operations and
  * to maintain consistency across different parts of the application.
+ *
+ * see ConfigManagementTest
  */
 object ConfigManagement extends App {
   private var config: Config = _
