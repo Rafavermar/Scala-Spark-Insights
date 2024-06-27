@@ -5,6 +5,7 @@ This repository documents my learning progress as a Data Engineering on Scala wi
 
 ## Table of Contents
 - [Week 1: Scala Collections, Error Handling, Configuration, and More](#week-1-scala-collections-error-handling-configuration-and-more)
+- [Week 2:](#week-2)
 - [Environment Setup](#environment-setup)
 - [Benchmarking JMH](#benchmarking-jmh)
 - [Additional Resources](#additional-resources)
@@ -25,10 +26,11 @@ The first week was an intensive dive into Scala, covering a wide range of topics
 5. **Configuration Management** - Managing app settings with Typesafe Config. ([View Code](src/main/scala/week1/config)).
 6. **Error Handling** - Strategies to manage errors gracefully. ([View Code](src/main/scala/week1/errors)).
 7. **Traits and Abstract Classes** - Using traits and abstract classes to design robust systems. ([View Code](src/main/scala/week1/traits)).
-8. **Validation** - ensuring that the validation logic not only is correct but also performs well under various conditions. ([View Code](src/main/scala/week1/validations)).
-9. **Tests** - ([View Code](src/test)).
+8. **Generics** - use of generics in Scala to create type-safe and reusable components. ([View Code](src/main/scala/week1/generics)).
+9. **Validation** - ensuring that the validation logic not only is correct but also performs well under various conditions. ([View Code](src/main/scala/week1/validations)).
+10. **Tests** - ([View Code](src/test)).
 
-
+## Week 2:
 
 ## Using Scala Class Objects and Worksheets
 Scala class objects serve as single instances of their definitions and are often used to store utility functions and constants. They provide a way to group similar functions or properties under a single namespace, which can enhance the modularity and reusability of your code.
