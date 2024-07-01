@@ -1,0 +1,28 @@
+{
+  "type": "record",
+  "name": "Person",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "age",
+      "type": "int"
+    },
+    {
+      "name": "version",
+      "type": "string"
+    },
+    {
+      "name": "city",
+      "type": "string",
+      "default": "Valencia",
+      "doc": "The city where the person lives"
+    }
+  ]
+}

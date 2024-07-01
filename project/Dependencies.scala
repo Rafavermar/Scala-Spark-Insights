@@ -6,7 +6,10 @@ object Dependencies {
   val sparkDependencies = Seq(
     "org.apache.spark" %% "spark-core" % Versions.Spark % Provided,
     "org.apache.spark" %% "spark-sql" % Versions.Spark % Provided,
-    "org.apache.spark" %% "spark-graphx" % Versions.Spark % Provided
+    "org.apache.spark" %% "spark-graphx" % Versions.Spark % Provided,
+    "org.apache.spark" %% "spark-avro" % Versions.Spark % Provided,
+    "io.delta" %% "delta-core" % Versions.Delta % Provided
+
   )
 
   val catsDependencies = Seq(

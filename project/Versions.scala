@@ -5,4 +5,5 @@ object Versions {
   val ScalaTest = "3.2.18"
   val Scalafmt = "3.8.1"
   val Jmh = "1.37"
+  val Delta = "2.4.0"
 }

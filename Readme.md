@@ -32,7 +32,7 @@ The first week was an intensive dive into Scala, covering a wide range of topics
 11. **Column Functions** - pending
 12. **Implicits** - pending
 13. **Monads** - pending
-14. **Paterns** - Applicative, functors, monads, monoids - pending
+14. **Paterns** - Applicative, functors, monads, monoids, observer - pending
 15. **Railway small Project demo** - pending
 16. **IoT small Project demo** - pending
 
