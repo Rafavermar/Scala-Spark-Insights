@@ -5,7 +5,7 @@ This repository documents my learning progress as a Data Engineering on Scala wi
 
 ## Table of Contents
 - [Week 1: Scala Collections, Error Handling, Configuration, and More](#week-1-scala-collections-error-handling-configuration-and-more)
-- [Week 2:](#week-2)
+- [Week 2:](#week-2-apache-spark-and-big-data-processing)
 - [Environment Setup](#environment-setup)
 - [Benchmarking JMH](#benchmarking-jmh)
 - [Additional Resources](#additional-resources)
@@ -20,17 +20,44 @@ The first week was an intensive dive into Scala, covering a wide range of topics
    - ControlStructures - conditionals, loops, and pattern matching.
    - ErrorHandling - exception handling and advanced use of `Option` and `Try`.
    - Var / Val - mutable and immutable state management, the usage of case classes and functional programming techniques such as `tail recursion` and `foldLeft`
-2. **Advanced Features** - Options, TypeAliases, PackageObjects, Case Classes ([View Code](src/main/scala/week1/advancedfeatures)).
-3. **Scala Collections** - Exploring mutable and immutable collections. ([View Code](src/main/scala/week1/collections)).
-4. **Function Compositions** - Utilizing function chaining and compositions. ([View Code](src/main/scala/week1/functions)).
-5. **Configuration Management** - Managing app settings with Typesafe Config. ([View Code](src/main/scala/week1/config)).
-6. **Error Handling** - Strategies to manage errors gracefully. ([View Code](src/main/scala/week1/errors)).
-7. **Traits and Abstract Classes** - Using traits and abstract classes to design robust systems. ([View Code](src/main/scala/week1/traits)).
-8. **Generics** - use of generics in Scala to create type-safe and reusable components. ([View Code](src/main/scala/week1/generics)).
-9. **Validation** - ensuring that the validation logic not only is correct but also performs well under various conditions. ([View Code](src/main/scala/week1/validations)).
+2.  **Advanced Features** - Options, TypeAliases, PackageObjects, Case Classes ([View Code](src/main/scala/week1/advancedfeatures)).
+3.  **Scala Collections** - Exploring mutable and immutable collections. ([View Code](src/main/scala/week1/collections)).
+4.  **Function Compositions** - Utilizing function chaining and compositions. ([View Code](src/main/scala/week1/functions)).
+5.  **Configuration Management** - Managing app settings with Typesafe Config. ([View Code](src/main/scala/week1/config)).
+6.  **Error Handling** - Strategies to manage errors gracefully. ([View Code](src/main/scala/week1/errors)).
+7.  **Traits and Abstract Classes** - Using traits and abstract classes to design robust systems. ([View Code](src/main/scala/week1/traits)).
+8.  **Generics** - use of generics in Scala to create type-safe and reusable components. ([View Code](src/main/scala/week1/generics)).
+9.  **Validation** - ensuring that the validation logic not only is correct but also performs well under various conditions. ([View Code](src/main/scala/week1/validations)).
 10. **Tests** - ([View Code](src/test)).
+11. **Column Functions** - pending
+12. **Implicits** - pending
+13. **Monads** - pending
+14. **Paterns** - Applicative, functors, monads, monoids - pending
+15. **Railway small Project demo** - pending
+16. **IoT small Project demo** - pending
 
-## Week 2:
+## Week 2: Apache Spark and Big Data Processing
+Walkthrough Apache Spark, focusing on its architecture, data structures, and processing capabilities.
+
+### Topics Covered
+1.  **First Spark App** - An overview of Spark's design and ecosystem. ([View Code](src/main/scala/week2/sparkapp/FirstSparkApp.scala))
+2.  **Resilient Distributed Datasets (RDDs)** - Deep dive into RDDs, Spark's primary data structure. ([View Code](src/main/scala/week2/rdd))
+     - BinaryLogProcessing
+     - CustomFunctions
+     - DataFrameOperations
+     - GraphOperations
+     - RDDOperations
+3.  **Data Formats (Encoding)** - Handling various data formats such as Parquet, Avro, ORC, and JSON within Spark.
+4.  **Spark SQL** -  Comprehensive coverage on using Spark SQL for data manipulation and analysis.
+5.  **Data Schemas and Partitioning** - Exploring schemas and data partitioning to optimize performance.
+6.  **Data Bucketization and Sorting** - Techniques for bucketizing and sorting data to enhance query performance.
+7.  **Spark Plan** - Understanding Spark's execution plan for optimizing processing tasks.
+8.  **OLAP Functions** - Implementing OLAP functions for analytical processing in Spark.
+9.  **Dataset Encoders** - Configuring encoders for efficient data serialization and deserialization in Spark.
+10. **Dataset API** - Mastering the Dataset API for structured data operations in Spark.
+11. **Assembly and docker** - Learning how to package Spark applications in Docker containers for scalable deployments using Kubernetes.
+12. **Spark Standalone Cluster** - Exploring setting up and managing a Spark standalone cluster for optimized data processing.
+
 
 ## Using Scala Class Objects and Worksheets
 Scala class objects serve as single instances of their definitions and are often used to store utility functions and constants. They provide a way to group similar functions or properties under a single namespace, which can enhance the modularity and reusability of your code.
