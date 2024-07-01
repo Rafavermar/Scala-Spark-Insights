@@ -8,7 +8,7 @@ object Dependencies {
     "org.apache.spark" %% "spark-sql" % Versions.Spark % Provided,
     "org.apache.spark" %% "spark-graphx" % Versions.Spark % Provided,
     "org.apache.spark" %% "spark-avro" % Versions.Spark % Provided,
-    "io.delta" %% "delta-core" % Versions.Delta % Provided
+    "io.delta" %% "delta-spark" % Versions.Delta % Provided,
 
   )
 
