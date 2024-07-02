@@ -48,7 +48,10 @@ Walkthrough Apache Spark, focusing on its architecture, data structures, and pro
      - GraphOperations
      - RDDOperations
 3. **Data Formats (Encoding)** - Handling various data formats such as Parquet, Avro, ORC, and JSON within Spark.([View Code](src/main/scala/week2/encoding))
-4. **Spark SQL** -  Comprehensive coverage on using Spark SQL for data manipulation and analysis.
+4. **Spark SQL** -  Comprehensive coverage on using Spark SQL for data manipulation and analysis.([View Code](src/main/scala/week2/sparksql))
+      - Dataframes - creation, manipulation, and storage of DataFrames, emphasizing Spark's capabilities in handling data transformation and storage efficiently
+      - Datasets - Advanced usage of Datasets in Spark with complex data structures. Usage of nested datasets, tuples, lists, maps, and options. **Kryo**
+      - Other Use Cases
 5. **Data Schemas and Partitioning** - Exploring schemas and data partitioning to optimize performance.
 6. **Spark Plan** - Understanding Spark's execution plan for optimizing processing tasks.
 7. **OLAP Functions** - Implementing OLAP functions for analytical processing in Spark.
