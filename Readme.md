@@ -30,7 +30,7 @@ The first week was an intensive dive into Scala, covering a wide range of topics
 9. **Validation** - ensuring that the validation logic not only is correct but also performs well under various conditions. ([View Code](src/main/scala/week1/validations)).
 10. **Column Functions** -  ([View Code](src/main/scala/week1/columns)).
 11. **Implicits** - implicit classes and types to handle memory sizes with convenience methods for specifying units. ([View Code](src/main/scala/week1/implicits))
-12. **Tests** - ([View Code](src/test))
+12. **Tests** - ([View Code](src/test/scala/week1))
 13. **Monads** - pending
 14. **Paterns** - Applicative, functors, monads, monoids, observer - pending
 15. **Railway small Project demo** - pending
@@ -63,6 +63,7 @@ Walkthrough Apache Spark, focusing on its architecture, data structures, and pro
 10. **Dataset API** - Mastering the Dataset API for structured data operations in Spark.
 11. **Assembly and docker** - Learning how to package Spark applications in Docker containers for scalable deployments using Kubernetes.
 12. **Spark Standalone Cluster** - Exploring setting up and managing a Spark standalone cluster for optimized data processing.
+13. **Tests** ([View Code](src/test/scala/week2))
 
 
 ## Using Scala Class Objects and Worksheets
