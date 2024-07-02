@@ -28,9 +28,9 @@ The first week was an intensive dive into Scala, covering a wide range of topics
 7.  **Traits and Abstract Classes** - Using traits and abstract classes to design robust systems. ([View Code](src/main/scala/week1/traits)).
 8.  **Generics** - use of generics in Scala to create type-safe and reusable components. ([View Code](src/main/scala/week1/generics)).
 9.  **Validation** - ensuring that the validation logic not only is correct but also performs well under various conditions. ([View Code](src/main/scala/week1/validations)).
-10. **Tests** - ([View Code](src/test)).
+10. **Tests** - ([View Code](src/test))
 11. **Column Functions** - pending
-12. **Implicits** - pending
+12. **Implicits** - implicit classes and types to handle memory sizes with convenience methods for specifying units. ([View Code](src/main/scala/week1/implicits))
 13. **Monads** - pending
 14. **Paterns** - Applicative, functors, monads, monoids, observer - pending
 15. **Railway small Project demo** - pending
@@ -47,7 +47,7 @@ Walkthrough Apache Spark, focusing on its architecture, data structures, and pro
      - DataFrameOperations
      - GraphOperations
      - RDDOperations
-3.  **Data Formats (Encoding)** - Handling various data formats such as Parquet, Avro, ORC, and JSON within Spark.
+3.  **Data Formats (Encoding)** - Handling various data formats such as Parquet, Avro, ORC, and JSON within Spark.([View Code](src/main/scala/week2/encoding))
 4.  **Spark SQL** -  Comprehensive coverage on using Spark SQL for data manipulation and analysis.
 5.  **Data Schemas and Partitioning** - Exploring schemas and data partitioning to optimize performance.
 6.  **Data Bucketization and Sorting** - Techniques for bucketizing and sorting data to enhance query performance.
