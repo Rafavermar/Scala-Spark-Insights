@@ -52,6 +52,7 @@ Walkthrough Apache Spark, focusing on its architecture, data structures, and pro
       - Dataframes - creation, manipulation, and storage of DataFrames, emphasizing Spark's capabilities in handling data transformation and storage efficiently
       - Datasets - Advanced usage of Datasets in Spark with complex data structures. Usage of nested datasets, tuples, lists, maps, and options. **Kryo**
       - Other Use Cases - DataFrame operations in Spark SQL, SQLRunner, IoT Data Generators
+      - CEE (Common Expression Elimination), UDA (User-Defined Aggregate), UDF (User-Defined Function)
 5. **Data Schemas and Partitioning** - Exploring schemas and data partitioning to optimize performance.
 6. **Spark Plan** - Understanding Spark's execution plan for optimizing processing tasks.
 7. **OLAP Functions** - Implementing OLAP functions for analytical processing in Spark.
