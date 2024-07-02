@@ -40,20 +40,20 @@ The first week was an intensive dive into Scala, covering a wide range of topics
 Walkthrough Apache Spark, focusing on its architecture, data structures, and processing capabilities.
 
 ### Topics Covered
-1.  **First Spark App** - An overview of Spark's design and ecosystem. ([View Code](src/main/scala/week2/sparkapp/FirstSparkApp.scala))
-2.  **Resilient Distributed Datasets (RDDs)** - Deep dive into RDDs, Spark's primary data structure. ([View Code](src/main/scala/week2/rdd))
+1. **First Spark App** - An overview of Spark's design and ecosystem. ([View Code](src/main/scala/week2/sparkapp/FirstSparkApp.scala))
+2. **Resilient Distributed Datasets (RDDs)** - Deep dive into RDDs, Spark's primary data structure. ([View Code](src/main/scala/week2/rdd))
      - BinaryLogProcessing
      - CustomFunctions
      - DataFrameOperations
      - GraphOperations
      - RDDOperations
-3.  **Data Formats (Encoding)** - Handling various data formats such as Parquet, Avro, ORC, and JSON within Spark.([View Code](src/main/scala/week2/encoding))
-4.  **Spark SQL** -  Comprehensive coverage on using Spark SQL for data manipulation and analysis.
-5.  **Data Schemas and Partitioning** - Exploring schemas and data partitioning to optimize performance.
-6.  **Data Bucketization and Sorting** - Techniques for bucketizing and sorting data to enhance query performance.
-7.  **Spark Plan** - Understanding Spark's execution plan for optimizing processing tasks.
-8.  **OLAP Functions** - Implementing OLAP functions for analytical processing in Spark.
-9.  **Dataset Encoders** - Configuring encoders for efficient data serialization and deserialization in Spark.
+3. **Data Formats (Encoding)** - Handling various data formats such as Parquet, Avro, ORC, and JSON within Spark.([View Code](src/main/scala/week2/encoding))
+4. **Spark SQL** -  Comprehensive coverage on using Spark SQL for data manipulation and analysis.
+5. **Data Schemas and Partitioning** - Exploring schemas and data partitioning to optimize performance.
+6. **Spark Plan** - Understanding Spark's execution plan for optimizing processing tasks.
+7. **OLAP Functions** - Implementing OLAP functions for analytical processing in Spark.
+8. **Data Bucketization and Sorting** - Techniques for bucketizing and sorting data to enhance query performance.
+9. **Dataset Encoders** - Configuring encoders for efficient data serialization and deserialization in Spark.
 10. **Dataset API** - Mastering the Dataset API for structured data operations in Spark.
 11. **Assembly and docker** - Learning how to package Spark applications in Docker containers for scalable deployments using Kubernetes.
 12. **Spark Standalone Cluster** - Exploring setting up and managing a Spark standalone cluster for optimized data processing.
