@@ -20,17 +20,17 @@ The first week was an intensive dive into Scala, covering a wide range of topics
    - ControlStructures - conditionals, loops, and pattern matching.
    - ErrorHandling - exception handling and advanced use of `Option` and `Try`.
    - Var / Val - mutable and immutable state management, the usage of case classes and functional programming techniques such as `tail recursion` and `foldLeft`
-2.  **Advanced Features** - Options, TypeAliases, PackageObjects, Case Classes ([View Code](src/main/scala/week1/advancedfeatures)).
-3.  **Scala Collections** - Exploring mutable and immutable collections. ([View Code](src/main/scala/week1/collections)).
-4.  **Function Compositions** - Utilizing function chaining and compositions. ([View Code](src/main/scala/week1/functions)).
-5.  **Configuration Management** - Managing app settings with Typesafe Config. ([View Code](src/main/scala/week1/config)).
-6.  **Error Handling** - Strategies to manage errors gracefully. ([View Code](src/main/scala/week1/errors)).
-7.  **Traits and Abstract Classes** - Using traits and abstract classes to design robust systems. ([View Code](src/main/scala/week1/traits)).
-8.  **Generics** - use of generics in Scala to create type-safe and reusable components. ([View Code](src/main/scala/week1/generics)).
-9.  **Validation** - ensuring that the validation logic not only is correct but also performs well under various conditions. ([View Code](src/main/scala/week1/validations)).
-10. **Tests** - ([View Code](src/test))
-11. **Column Functions** - pending
-12. **Implicits** - implicit classes and types to handle memory sizes with convenience methods for specifying units. ([View Code](src/main/scala/week1/implicits))
+2. **Advanced Features** - Options, TypeAliases, PackageObjects, Case Classes ([View Code](src/main/scala/week1/advancedfeatures)).
+3. **Scala Collections** - Exploring mutable and immutable collections. ([View Code](src/main/scala/week1/collections)).
+4. **Function Compositions** - Utilizing function chaining and compositions. ([View Code](src/main/scala/week1/functions)).
+5. **Configuration Management** - Managing app settings with Typesafe Config. ([View Code](src/main/scala/week1/config)).
+6. **Error Handling** - Strategies to manage errors gracefully. ([View Code](src/main/scala/week1/errors)).
+7. **Traits and Abstract Classes** - Using traits and abstract classes to design robust systems. ([View Code](src/main/scala/week1/traits)).
+8. **Generics** - use of generics in Scala to create type-safe and reusable components. ([View Code](src/main/scala/week1/generics)).
+9. **Validation** - ensuring that the validation logic not only is correct but also performs well under various conditions. ([View Code](src/main/scala/week1/validations)).
+10. **Column Functions** -  ([View Code](src/main/scala/week1/columns)).
+11. **Implicits** - implicit classes and types to handle memory sizes with convenience methods for specifying units. ([View Code](src/main/scala/week1/implicits))
+12. **Tests** - ([View Code](src/test))
 13. **Monads** - pending
 14. **Paterns** - Applicative, functors, monads, monoids, observer - pending
 15. **Railway small Project demo** - pending
@@ -55,9 +55,11 @@ Walkthrough Apache Spark, focusing on its architecture, data structures, and pro
       - CEE (Common Expression Elimination), UDA (User-Defined Aggregate), UDF (User-Defined Function)
 5. **Data Schemas and Partitioning** - Exploring schemas and data partitioning to optimize performance.
 6. **Spark Plan** - Understanding Spark's execution plan for optimizing processing tasks.
-7. **OLAP Functions** - Implementing OLAP functions for analytical processing in Spark.
-8. **Data Bucketization and Sorting** - Techniques for bucketizing and sorting data to enhance query performance.
-9. **Dataset Encoders** - Configuring encoders for efficient data serialization and deserialization in Spark.
+7. **OLAP Functions** - Implementing OLAP functions for analytical processing in Spark. ([View Code](src/main/scala/week2/sparksql/olap))
+8. **Data Bucketization and Sorting** - Techniques for bucketizing and sorting data to enhance query performance.([View Code](src/main/scala/week2/bucketization))
+   - dataset pending
+9. **Dataset Encoders** - Configuring encoders for efficient data serialization and deserialization in Spark.([View Code](src/main/scala/week2/encoders))
+   - **NOT FISNISHED**
 10. **Dataset API** - Mastering the Dataset API for structured data operations in Spark.
 11. **Assembly and docker** - Learning how to package Spark applications in Docker containers for scalable deployments using Kubernetes.
 12. **Spark Standalone Cluster** - Exploring setting up and managing a Spark standalone cluster for optimized data processing.

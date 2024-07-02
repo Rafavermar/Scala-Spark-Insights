@@ -12,7 +12,7 @@ import scala.util.Random
  */
 object IoTDataGenerator {
   // Path where the generated IoT data in JSON format will be saved.
-  val IotJsonDataPath = "data/datagen/iot_data.json"
+  val IotJsonDataPath = "week2/sparksql/otherusecases/data/datagen/iot_data.json"
 
   // Defined range for generating random temperature values.
   val ValorMinimoTemperatura: Double = -20

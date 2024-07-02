@@ -1,7 +1,7 @@
 package week1.config
 
-import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.BeforeAndAfterEach
+import org.scalatest.funsuite.AnyFunSuite
 
 /**
  * Test suite for ConfigManagement to ensure that all configuration-related functionality
