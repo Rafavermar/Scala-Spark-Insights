@@ -5,7 +5,7 @@ This repository documents my learning progress as a Data Engineering on Scala wi
 
 ## Table of Contents
 - [Week 1: Scala Collections, Error Handling, Configuration, and More](#week-1-scala-collections-error-handling-configuration-and-more)
-- [Week 2:](#week-2-apache-spark-and-big-data-processing)
+- [Week 2: Apache Spark and Big Data Processing](#week-2-apache-spark-and-big-data-processing)
 - [Environment Setup](#environment-setup)
 - [Benchmarking JMH](#benchmarking-jmh)
 - [Additional Resources](#additional-resources)
