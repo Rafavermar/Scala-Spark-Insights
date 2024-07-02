@@ -13,8 +13,8 @@ object DataFrames2 extends App {
 
   val dfRaw: DataFrame = {
     // Assuming the CSV file has one column without header
-    val dfGen = DataGen02.generar(spark)
-    DataGen02.guardarCSV(dfGen, DataFrames2Config.eventosRaw)
+    val dfGen = DataFrames2Gen.generar(spark)
+    DataFrames2Gen.guardarCSV(dfGen, DataFrames2Config.eventosRaw)
     spark.read
       .option("header", "false") // Ensuring we handle CSV without headers
       .option("delimiter", ",")

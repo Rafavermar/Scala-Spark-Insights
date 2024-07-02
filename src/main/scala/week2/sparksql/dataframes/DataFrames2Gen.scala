@@ -5,7 +5,7 @@ import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 import org.apache.spark.sql.expressions.UserDefinedFunction
 import org.apache.spark.sql.functions.udf
 
-object DataGen02 {
+object DataFrames2Gen {
   // Define case classes for structured data
   case class Evento(id: Int, nombre: String, fecha: String, valor: Double, tipo: String = "Alerta1") {
     def toCSV: String = s"$id,$nombre,$fecha,$valor,$tipo"

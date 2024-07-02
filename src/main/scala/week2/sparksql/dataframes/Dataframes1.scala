@@ -64,26 +64,26 @@ object Dataframes1 extends App {
   df4.show(false)
 
   // Save DataFrame in different formats
-  df.write.mode(SaveMode.Overwrite).csv("src/main/scala/week2/sparksql/out/DataFrames1.csv")
-  df.write.mode(SaveMode.Append).parquet("src/main/scala/week2/sparksql/out/DataFrames1.parquet")
-  df.write.mode(SaveMode.ErrorIfExists).json("src/main/scala/week2/sparksql/out/DataFrames1.json")
+  df.write.mode(SaveMode.Overwrite).csv("src/main/scala/week2/sparksql/dataframes/out/DataFrames1.csv")
+  df.write.mode(SaveMode.Append).parquet("src/main/scala/week2/sparksql/dataframes/out/DataFrames1.parquet")
+  df.write.mode(SaveMode.ErrorIfExists).json("src/main/scala/week2/sparksql/dataframes/out/DataFrames1.json")
 
   // Demonstrate handling of files and data formats
   val csvDisco = spark.read
     .option("sep", ",")
     .option("inferSchema", "true")
     .option("header", "true")
-    .csv("src/main/scala/week2/sparksql/out/DataFrames1.csv")
+    .csv("src/main/scala/week2/sparksql/dataframes/out/DataFrames1.csv")
   csvDisco.show(false)
 
-  val parquetDisco = spark.read.parquet("src/main/scala/week2/sparksql/out/DataFrames1.parquet")
+  val parquetDisco = spark.read.parquet("src/main/scala/week2/sparksql/dataframes/out/DataFrames1.parquet")
   parquetDisco.show(false)
 
   val jsonDisco = spark.read
     .option("multiLine", "true")
     .option("mode", "PERMISSIVE")
     .option("inferSchema", "true")
-    .json("src/main/scala/week2/sparksql/out/DataFrames1.json")
+    .json("src/main/scala/week2/sparksql/dataframes/out/DataFrames1.json")
   jsonDisco.show(false)
 }
 
