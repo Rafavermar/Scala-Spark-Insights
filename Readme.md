@@ -34,7 +34,7 @@ The first week was an intensive dive into Scala, covering a wide range of topics
 13. **Monads** - pending
 14. **Paterns** - Applicative, functors, monads, monoids, observer - pending
 15. **Railway small Project demo** - pending
-16. **IoT small Project demo** - pending
+16. **IoT small Project demo** - ([View Code](src/main/scala/week1/iotexample))
 
 ## Week 2: Apache Spark and Big Data Processing
 Walkthrough Apache Spark, focusing on its architecture, data structures, and processing capabilities.
