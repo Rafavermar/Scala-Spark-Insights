@@ -3,37 +3,56 @@ package week2.encoders
 import org.apache.spark.sql.catalyst.encoders.ExpressionEncoder
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.{Encoder, Row, SparkSession}
-
 import scala.reflect.{ClassTag, classTag}
 
+/**
+ * Demonstrates the creation and use of a custom encoder for Spark SQL.
+ * This application defines a custom row encoder for a case class `Person`.
+ */
 object CustomRowEncoder extends App {
 
-  // Definir una clase para representar datos de personas con atributos personalizados
+  /**
+   * Represents a person with customized attributes.
+   * @param id Unique identifier of the person.
+   * @param name Name of the person.
+   * @param age Age of the person.
+   * @param metadata Additional metadata about the person as a key-value map.
+   */
   final case class Person(id: Int, name: String, age: Int, metadata: Map[String, String])
 
-  // Crear una instancia de SparkSession
+  /**
+   * Initialize SparkSession with a local master configuration.
+   * This session is used to manage configurations and perform operations like creating DataFrames.
+   */
   val spark = SparkSession.builder().master("local").appName("CustomEncoderExample").getOrCreate()
 
-  // Crear un DataFrame a partir de una secuencia de objetos Person
+  /**
+   * Create a DataFrame from a sequence of Person objects.
+   * This DataFrame serves as the foundation for further operations like custom encoding.
+   */
   val persons = Seq(
     Person(1, "Alice", 30, Map("city" -> "New York", "gender" -> "Female")),
     Person(2, "Bob", 25, Map("city" -> "San Francisco", "gender" -> "Male"))
   )
   val personsDF = spark.createDataFrame(persons)
 
-  // Definir un encoder personalizado para la clase Person
+  /**
+   * Define an ExpressionEncoder for the Person class to convert Person objects to and from the internal Spark SQL format.
+   * This encoder is used implicitly by the dataset operations.
+   */
   val customEncoder: Encoder[Person] = ExpressionEncoder()
 
-  // Crear una función para convertir un objeto Person en una fila con los atributos personalizados
+  /**
+   * Custom Encoder to manually convert instances of Person into Spark SQL Rows and back.
+   * This allows for control over how each field is encoded into a Row and reconstructed.
+   */
   val customRowEncoder: Encoder[Person] = new Encoder[Person] {
-    def schema: StructType = {
-      StructType(
-        StructField("id", IntegerType, nullable = false) ::
-          StructField("name", StringType, nullable = false) ::
-          StructField("age", IntegerType, nullable = false) ::
-          StructField("metadata", StringType, nullable = true) :: Nil
-      )
-    }
+    def schema: StructType = StructType(
+      StructField("id", IntegerType, nullable = false) ::
+        StructField("name", StringType, nullable = false) ::
+        StructField("age", IntegerType, nullable = false) ::
+        StructField("metadata", StringType, nullable = true) :: Nil
+    )
 
     def clsTag: ClassTag[Person] = classTag[Person]
 
@@ -46,24 +65,24 @@ object CustomRowEncoder extends App {
       val name = row.getString(1)
       val age = row.getInt(2)
       val metadataString = row.getString(3)
-      val metadataMap = metadataString
-        .stripPrefix("{")
-        .stripSuffix("}")
-        .split(",")
-        .map(_.split(":"))
-        .map(parts => parts(0).trim -> parts(1).trim)
-        .toMap
+      val metadataMap = metadataString.stripPrefix("{").stripSuffix("}").split(",").map(_.split(":")).map(parts => parts(0).trim -> parts(1).trim).toMap
       Person(id, name, age, metadataMap)
     }
   }
 
-  // Aplicar el encoder personalizado para convertir el DataFrame en un Dataset tipado
-  private val personsDS = personsDF.as(customRowEncoder)
+  /**
+   * Convert the DataFrame to a strongly typed Dataset using the custom row encoder.
+   * This enables type-safe operations on the data.
+   */
+  private val personsDS = personsDF.as[Person](customRowEncoder)
 
-  // Realizar operaciones con el Dataset
+  /**
+   * Filter the Dataset to find persons older than 25.
+   */
   private val filteredPersons = personsDS.filter(person => person.age > 25)
 
-  // Mostrar los resultados
+  /**
+   * Display the results of the filter operation.
+   */
   filteredPersons.show()
-
 }

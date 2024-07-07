@@ -7,59 +7,70 @@ import org.apache.spark.sql.SparkSession
 
 import java.util.concurrent.atomic.AtomicLong
 
+/**
+ * Demonstrates serialization performance monitoring using Spark's Kryo serialization and capturing performance metrics.
+ */
 object SerializationComparisonWithMetrics {
 
+  /**
+   * Entry point for the Spark application to measure serialization performance with metrics.
+   * @param args Command-line arguments (not used).
+   */
   def main(args: Array[String]): Unit = {
-    // Configurar Spark para utilizar Kryo como el serializador
+    // Configure Spark to use Kryo as the serializer
     val conf = new SparkConf()
       .setAppName("SerializationComparisonWithMetrics")
       .set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
 
+    // Initialize a Spark session with the specified configuration
     val spark = SparkSession.builder().config(conf).master("local[2]").getOrCreate()
 
+    // Set log level to ERROR to reduce log output during execution
     spark.sparkContext.setLogLevel("ERROR")
 
-    // Crear una lista de datos de ejemplo
+    // Create a list of example data
     val baseData = List("Alice", "Bob", "Charlie", "David", "Mario", "Ana", "Felipe", "Maria")
     val data = (1 to 1000000).toList.map(i => (i, baseData((i - 1) % baseData.length)))
 
-    // Crear un RDD a partir de la lista
+    // Create an RDD from the list
     val rdd: RDD[(Int, String)] = spark.sparkContext.parallelize(data)
 
-    // Iniciar la monitorización del rendimiento
+    // Attach a custom SparkListener to gather performance metrics
     spark.sparkContext.addSparkListener(new MySparkListener)
 
-    // Realizar la serialización y medir el tiempo con Kryo
+    // Perform serialization and measure the time taken using Kryo
     val startWithKryo = System.currentTimeMillis()
     rdd.map { case (id, name) => (id, name.length) }.collect()
     val endWithKryo = System.currentTimeMillis()
 
-    // Detener las sesiones de Spark
+    // Stop the Spark session
     spark.stop()
 
-    // Imprimir las métricas de tiempo
+    // Print the time taken for serialization
     val timeWithKryo = endWithKryo - startWithKryo
-    println(s"Tiempo con Kryo: $timeWithKryo ms")
+    println(s"Time with Kryo: $timeWithKryo ms")
 
-    // Imprimir las métricas de memoria y CPU
-    println(s"Memoria utilizada: ${MySparkListener.memoryUsed} MB")
-    println(s"CPU utilizado: ${MySparkListener.cpuUsed} %")
+    // Print memory and CPU metrics gathered by the SparkListener
+    println(s"Memory used: ${MySparkListener.memoryUsed.get()} MB")
+    println(s"CPU used: ${MySparkListener.cpuUsed.get()} %")
   }
 }
 
+/**
+ * A custom SparkListener that updates metrics on task completion.
+ */
 class MySparkListener extends SparkListener {
   override def onTaskEnd(taskEnd: SparkListenerTaskEnd): Unit = {
-    MySparkListener.memoryUsed.set(taskEnd.taskMetrics.memoryBytesSpilled / (1024 * 1024)) // Convertir a MB
-    MySparkListener.cpuUsed.set(taskEnd.taskMetrics.executorCpuTime / 1000000) // Convertir a porcentaje
+    // Update memory and CPU usage metrics after each task ends
+    MySparkListener.memoryUsed.set(taskEnd.taskMetrics.memoryBytesSpilled / (1024 * 1024)) // Convert to MB
+    MySparkListener.cpuUsed.set(taskEnd.taskMetrics.executorCpuTime / 1000000) // Convert to percentage
   }
 }
 
+/**
+ * Object to hold and manage performance metrics as atomic longs.
+ */
 object MySparkListener {
   val memoryUsed: AtomicLong = new AtomicLong(0)
   val cpuUsed: AtomicLong = new AtomicLong(0)
 }
-
-
-
-
-
