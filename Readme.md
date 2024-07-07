@@ -60,7 +60,7 @@ Walkthrough Apache Spark, focusing on its architecture, data structures, and pro
    - dataset pending
 9. **Dataset Encoders** - Configuring encoders for efficient data serialization and deserialization in Spark.([View Code](src/main/scala/week2/encoders))
 10. **Dataset API** - Mastering the Dataset API for structured data operations in Spark. ([View Code](src/main/scala/week2/datasetsapi))
-11. **Assembly and docker** - Learning how to package Spark applications in Docker containers for scalable deployments using Kubernetes.
+11. **Assembly and docker** - Learning how to package Spark applications in Docker containers for scalable deployments using Kubernetes.([View Code](spark-assembly))
 12. **Spark Standalone Cluster** - Exploring setting up and managing a Spark standalone cluster for optimized data processing.
 13. **Tests** ([View Code](src/test/scala/week2))
 
