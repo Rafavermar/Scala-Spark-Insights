@@ -274,4 +274,3 @@ src/main/scala/week3/kafka/oss/Cluster/zookeeper-data/
 src/main/scala/week3/kafka/oss/Cluster/kafka-logs-3/
 src/main/scala/week3/kafka/oss/Cluster/kafka-logs-2/
 src/main/scala/week3/kafka/oss/confluent-ksqldb-0.29.0
-src/main/scala/week3/kafka/oss/kafka_2.13-3.7.0

@@ -73,7 +73,7 @@ This week focus on comprehensive basic and advanced streaming process systems. H
    - Streaming Kafka with Spark
    - Kafka Connect and KSQL
    - Conduktor
-2. **Spark Structured Streaming
+2. **Spark Structured Streaming**
 
 ## Using Scala Class Objects and Worksheets
 Scala class objects serve as single instances of their definitions and are often used to store utility functions and constants. They provide a way to group similar functions or properties under a single namespace, which can enhance the modularity and reusability of your code.
