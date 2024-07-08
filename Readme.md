@@ -6,6 +6,7 @@ This repository documents my learning progress as a Data Engineering on Scala wi
 ## Table of Contents
 - [Week 1: Scala Collections, Error Handling, Configuration, and More](#week-1-scala-collections-error-handling-configuration-and-more)
 - [Week 2: Apache Spark and Big Data Processing](#week-2-apache-spark-and-big-data-processing)
+- [Week 3: Apache Kafka](#week-3-apache-kafka)
 - [Environment Setup](#environment-setup)
 - [Benchmarking JMH](#benchmarking-jmh)
 - [Additional Resources](#additional-resources)
@@ -64,6 +65,13 @@ Walkthrough Apache Spark, focusing on its architecture, data structures, and pro
 12. **Spark Standalone Cluster** - Exploring setting up and managing a Spark standalone cluster for optimized data processing.
 13. **Tests** ([View Code](src/test/scala/week2))
 
+## Week 3: Apache Kafka
+This week focus on comprehensive basic and advanced streaming process systems. How to integrate Apache Spark and Kafka together with special attention to Spark Structured Streaming.
+1. **Apache Kafka integration within Spark architecture**
+   - Environment configuration
+   - Producers and consumers
+   - Streaming Kafka with Spark
+2. **Spark Structured Streaming
 
 ## Using Scala Class Objects and Worksheets
 Scala class objects serve as single instances of their definitions and are often used to store utility functions and constants. They provide a way to group similar functions or properties under a single namespace, which can enhance the modularity and reusability of your code.
