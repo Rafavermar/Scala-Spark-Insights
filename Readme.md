@@ -71,6 +71,8 @@ This week focus on comprehensive basic and advanced streaming process systems. H
    - Environment configuration
    - Producers and consumers
    - Streaming Kafka with Spark
+   - Kafka Connect and KSQL
+   - Conduktor
 2. **Spark Structured Streaming
 
 ## Using Scala Class Objects and Worksheets

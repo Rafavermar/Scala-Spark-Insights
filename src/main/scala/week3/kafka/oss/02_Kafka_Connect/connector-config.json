@@ -1,0 +1,9 @@
+{
+  "name": "file-source-connector",
+  "config": {
+    "connector.class": "FileStreamSource",
+    "tasks.max": "1",
+    "file": "oss/Kafka Connect/file.txt",
+    "topic": "test-topic"
+  }
+}

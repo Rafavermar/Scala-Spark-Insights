@@ -1,0 +1,971 @@
+{
+  "paragraphs": [
+    {
+      "title": "01.Instalación y configuración",
+      "text": "%md\nPara ejecutar Kafka, sólo tenemos el pre-requisito de tener java instalado.\nDescargamos Apache Kafka de:\n\nLo descomprimimos y lo movemos a nuestro directorio $HOME:\n```sh\ntar -xzf kafka_2.12-2.8.0.tgz\n```\n\nSeteamos la variable de entorno KAFKA_HOME:\n```sh\nexport KAFKA_HOME\u003d$HOME/kafka_2.12-2.8.0\n```\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-01 19:08:00.010",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePara ejecutar Kafka, sólo tenemos el pre-requisito de tener java instalado.\u003cbr /\u003e\nDescargamos Apache Kafka de:\u003c/p\u003e\n\u003cp\u003eLo descomprimimos y lo movemos a nuestro directorio $HOME:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"language-sh\"\u003etar -xzf kafka_2.12-2.8.0.tgz\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eSeteamos la variable de entorno KAFKA_HOME:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"language-sh\"\u003eexport KAFKA_HOME\u003d$HOME/kafka_2.12-2.8.0\n\u003c/code\u003e\u003c/pre\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_2035087200",
+      "id": "20180103-194606_935343585",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "dateStarted": "2021-05-01 19:08:00.011",
+      "dateFinished": "2021-05-01 19:08:00.020",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sh\nexport KAFKA_HOME\u003d/home/spark/kafka_2.12-2.8.0\nls $KAFKA_HOME\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-25 20:51:47.581",
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "LICENSE\nNOTICE\nbin\nconfig\nlibs\nlicenses\nlogs\nsite-docs\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_-2041740804",
+      "id": "20180103-194929_1847973156",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "dateStarted": "2022-12-25 20:51:47.596",
+      "dateFinished": "2022-12-25 20:51:48.230",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\nPrimero que nada nos tenemos que situar en el directorio raiz de Kafka:\n```sh\n$ cd KAFKA_HOME\n```",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-01 19:07:32.517",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePrimero que nada nos tenemos que situar en el directorio raiz de Kafka:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"sh\"\u003e$ cd KAFKA_HOME\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_302177745",
+      "id": "20180103-194445_1735642802",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "status": "READY"
+    },
+    {
+      "title": "02.Iniciamos Zookeeper",
+      "text": "%md\nKafka utiliza Zookeeper para mantener el estado del cluster. Para ello es necesario que antes de iniciar Kafka, zookeeper esté levantado.",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-01 19:07:32.518",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eKafka utiliza Zookeeper para mantener el estado del cluster. Para ello es necesario que antes de iniciar Kafka, zookeeper esté levantado.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_944410070",
+      "id": "20180103-200034_1476673278",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "status": "READY"
+    },
+    {
+      "text": "%sh\nexport KAFKA_HOME\u003d/home/spark/kafka_2.12-2.8.0\n$KAFKA_HOME/bin/zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-01 19:07:32.518",
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[2018-01-21 17:40:18,154] INFO Reading configuration from: /home/spark/kafka_2.12-2.8.0/config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)\n[2018-01-21 17:40:18,156] INFO autopurge.snapRetainCount set to 3 (org.apache.zookeeper.server.DatadirCleanupManager)\n[2018-01-21 17:40:18,156] INFO autopurge.purgeInterval set to 0 (org.apache.zookeeper.server.DatadirCleanupManager)\n[2018-01-21 17:40:18,156] INFO Purge task is not scheduled. (org.apache.zookeeper.server.DatadirCleanupManager)\n[2018-01-21 17:40:18,156] WARN Either no config or no quorum defined in config, running  in standalone mode (org.apache.zookeeper.server.quorum.QuorumPeerMain)\n[2018-01-21 17:40:18,174] INFO Reading configuration from: /home/spark/kafka_2.12-2.8.0/config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)\n[2018-01-21 17:40:18,175] INFO Starting server (org.apache.zookeeper.server.ZooKeeperServerMain)\n[2018-01-21 17:40:18,183] INFO Server environment:zookeeper.version\u003d3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,183] INFO Server environment:host.name\u003d192.168.1.64 (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,183] INFO Server environment:java.version\u003d1.8.0_25 (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,183] INFO Server environment:java.vendor\u003dOracle Corporation (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,183] INFO Server environment:java.home\u003d/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,183] INFO Server environment:java.class.path\u003d:/home/spark/kafka_2.12-2.8.0/bin/../libs/aopalliance-repackaged-2.5.0-b05.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/argparse4j-0.7.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/commons-lang3-3.5.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/connect-api-0.11.0.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/connect-file-0.11.0.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/connect-json-0.11.0.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/connect-runtime-0.11.0.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/connect-transforms-0.11.0.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/guava-20.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/hk2-api-2.5.0-b05.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/hk2-locator-2.5.0-b05.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/hk2-utils-2.5.0-b05.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jackson-annotations-2.8.5.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jackson-core-2.8.5.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jackson-databind-2.8.5.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jackson-jaxrs-base-2.8.5.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jackson-jaxrs-json-provider-2.8.5.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jackson-module-jaxb-annotations-2.8.5.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/javassist-3.21.0-GA.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/javax.annotation-api-1.2.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/javax.inject-1.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/javax.inject-2.5.0-b05.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/javax.servlet-api-3.1.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/javax.ws.rs-api-2.0.1.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jersey-client-2.24.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jersey-common-2.24.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jersey-container-servlet-2.24.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jersey-container-servlet-core-2.24.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jersey-guava-2.24.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jersey-media-jaxb-2.24.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jersey-server-2.24.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jetty-continuation-9.2.15.v20160210.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jetty-http-9.2.15.v20160210.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jetty-io-9.2.15.v20160210.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jetty-security-9.2.15.v20160210.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jetty-server-9.2.15.v20160210.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jetty-servlet-9.2.15.v20160210.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jetty-servlets-9.2.15.v20160210.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jetty-util-9.2.15.v20160210.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/jopt-simple-5.0.3.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/kafka-clients-0.11.0.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/kafka-log4j-appender-0.11.0.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/kafka-streams-0.11.0.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/kafka-streams-examples-0.11.0.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/kafka-tools-0.11.0.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/kafka_2.11-0.11.0.0-sources.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/kafka_2.11-0.11.0.0-test-sources.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/kafka_2.11-0.11.0.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/log4j-1.2.17.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/lz4-1.3.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/maven-artifact-3.5.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/metrics-core-2.2.0.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/osgi-resource-locator-1.0.1.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/plexus-utils-3.0.24.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/reflections-0.9.11.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/rocksdbjni-5.0.1.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/scala-library-2.11.11.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/scala-parser-combinators_2.11-1.0.4.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/slf4j-api-1.7.25.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/slf4j-log4j12-1.7.25.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/snappy-java-1.1.2.6.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/validation-api-1.1.0.Final.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/zkclient-0.10.jar:/home/spark/kafka_2.12-2.8.0/bin/../libs/zookeeper-3.4.10.jar (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,184] INFO Server environment:java.library.path\u003d/Users/mario/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:. (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,184] INFO Server environment:java.io.tmpdir\u003d/var/folders/0n/2zz4ghy53lx_w0p275nql_bm0000gn/T/ (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,184] INFO Server environment:java.compiler\u003d\u003cNA\u003e (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,184] INFO Server environment:os.name\u003dMac OS X (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,184] INFO Server environment:os.arch\u003dx86_64 (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,184] INFO Server environment:os.version\u003d10.13.2 (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,184] INFO Server environment:user.name\u003dmario (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,184] INFO Server environment:user.home\u003d/Users/mario (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,184] INFO Server environment:user.dir\u003d/Users/mario/Downloads/zeppelin-0.7.3-bin-netinst (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,191] INFO tickTime set to 3000 (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,191] INFO minSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,191] INFO maxSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)\n[2018-01-21 17:40:18,216] INFO binding to port 0.0.0.0/0.0.0.0:2181 (org.apache.zookeeper.server.NIOServerCnxnFactory)\n[2018-01-21 17:40:18,218] ERROR Unexpected exception, exiting abnormally (org.apache.zookeeper.server.ZooKeeperServerMain)\njava.net.BindException: Address already in use\n\tat sun.nio.ch.Net.bind0(Native Method)\n\tat sun.nio.ch.Net.bind(Net.java:436)\n\tat sun.nio.ch.Net.bind(Net.java:428)\n\tat sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)\n\tat sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)\n\tat sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:67)\n\tat org.apache.zookeeper.server.NIOServerCnxnFactory.configure(NIOServerCnxnFactory.java:90)\n\tat org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:117)\n\tat org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:87)\n\tat org.apache.zookeeper.server.ZooKeeperServerMain.main(ZooKeeperServerMain.java:53)\n\tat org.apache.zookeeper.server.quorum.QuorumPeerMain.initializeAndRun(QuorumPeerMain.java:116)\n\tat org.apache.zookeeper.server.quorum.QuorumPeerMain.main(QuorumPeerMain.java:78)\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "ExitValue: 1"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_-1547756673",
+      "id": "20180103-195406_762786109",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "status": "READY"
+    },
+    {
+      "text": "%md\nO podemos hacer uso del script: \n`/home/spark/00_start_zookeeper.sh`",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-01 19:14:00.737",
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eO podemos hacer uso del script:\u003cbr /\u003e\n\u003ccode\u003e/home/spark/00_start_zookeeper.sh\u003c/code\u003e\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_80806078",
+      "id": "20180103-195948_1000711573",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "dateStarted": "2021-05-01 19:14:00.742",
+      "dateFinished": "2021-05-01 19:14:00.746",
+      "status": "FINISHED"
+    },
+    {
+      "title": "04.Configuración de múltiples brokers de Kafka",
+      "text": "%md\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-01 19:07:32.520",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_-16544485",
+      "id": "20180103-200618_807521054",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "status": "READY"
+    },
+    {
+      "text": "%md\nCada broker de Kafka tiene un broker id propio, un directorio de logging y escucha en un determinado puerto.\nPara ello vamos a crear una copia de la configuración base para cada uno de los brokers:\n\n```sh\n\n$ cp config/server.properties config/server0.properties\n$ cp config/server.properties config/server1.properties\n$ cp config/server.properties config/server2.properties\n```\n\nY en cada fichero modificamos los siguientes parámetros respectivamente:\n```sh\nvi config/server0.properties\nbroker.id\u003d0\nlisteners\u003dPLAINTEXT://localhost:9092\nlog.dir\u003d/tmp/kafka-logs-0\n```\n```sh\nvi config/server1.properties\nbroker.id\u003d1\nlisteners\u003dPLAINTEXT://localhost:9093\nlog.dir\u003d/tmp/kafka-logs-1\n```\n\n```sh\nvi config/server2.properties\nbroker.id\u003d2\nlisteners\u003dPLAINTEXT://localhost:9094\nlog.dir\u003d/tmp/kafka-logs-2\n```\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-01 19:07:32.522",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCada broker de Kafka tiene un broker id propio, un directorio de logging y escucha en un determinado puerto.\u003cbr/\u003ePara ello vamos a crear una copia de la configuración base para cada uno de los brokers:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"sh\"\u003e\u003cbr/\u003e$ cp config/server.properties config/server0.properties\n$ cp config/server.properties config/server1.properties\n$ cp config/server.properties config/server2.properties\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eY en cada fichero modificamos los siguientes parámetros respectivamente:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"sh\"\u003evi config/server0.properties\nbroker.id\u003d0\nlisteners\u003dPLAINTEXT://localhost:9092\nlog.dir\u003d/tmp/kafka-logs-0\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class\u003d\"sh\"\u003evi config/server1.properties\nbroker.id\u003d1\nlisteners\u003dPLAINTEXT://localhost:9093\nlog.dir\u003d/tmp/kafka-logs-1\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class\u003d\"sh\"\u003evi config/server2.properties\nbroker.id\u003d2\nlisteners\u003dPLAINTEXT://localhost:9094\nlog.dir\u003d/tmp/kafka-logs-2\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_926314847",
+      "id": "20180103-200656_997621435",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "status": "READY"
+    },
+    {
+      "text": "%md\nA continuación iniciamos cada broker en una consola propia:\n```sh \n# Consola 1\nbin/kafka-server-start.sh config/server0.properties\n```\n\n```sh \n# Consola 2\nbin/kafka-server-start.sh config/server1.properties\n```\n\n```sh \n# Consola 3\nbin/kafka-server-start.sh config/server2.properties\n```\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-01 19:07:32.523",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eA continuación iniciamos cada broker en una consola propia:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"sh \"\u003e# Consola 1\nbin/kafka-server-start.sh config/server0.properties\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class\u003d\"sh \"\u003e# Consola 2\nbin/kafka-server-start.sh config/server1.properties\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class\u003d\"sh \"\u003e# Consola 3\nbin/kafka-server-start.sh config/server2.properties\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_1210035903",
+      "id": "20180103-200912_791191871",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "status": "READY"
+    },
+    {
+      "title": "Creación del topic",
+      "text": "%md\nUn topic en Kafka es una colección de datos con un nombre concreto, algo similar a una tabla de una base de datos.\nAntes de poder escribir y consumir datos en el topic primero hay que crearlo. Kafka provee de un API de manera que el programador puede crear el topic desde su código fuente, pero lo habitual es que lo cree un administrador desde consola.",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-01 19:07:32.523",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eUn topic en Kafka es una colección de datos con un nombre concreto, algo similar a una tabla de una base de datos.\u003cbr/\u003eAntes de poder escribir y consumir datos en el topic primero hay que crearlo. Kafka provee de un API de manera que el programador puede crear el topic desde su código fuente, pero lo habitual es que lo cree un administrador desde consola.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_-933862080",
+      "id": "20180103-203620_1284613561",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "status": "READY"
+    },
+    {
+      "title": "",
+      "text": "%md\n```sh\n$KAFKA_HOME/bin/kafka-topics.sh --zookeeper localhost:2181 --create --topic helloworld --partitions 3 --replication-factor 3\n```\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-01 19:07:32.524",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cpre\u003e\u003ccode class\u003d\"sh\"\u003e$KAFKA_HOME/bin/kafka-topics.sh --zookeeper localhost:2181 --create --topic helloworld --partitions 3 --replication-factor 3\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_-206176681",
+      "id": "20180118-174654_801460955",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "status": "READY"
+    },
+    {
+      "title": "Listamos los topics",
+      "text": "%md\n```sh\nbin/kafka-topics.sh --zookeeper localhost:2181 --list\n```",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-01 19:07:32.525",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cpre\u003e\u003ccode class\u003d\"sh\"\u003ebin/kafka-topics.sh --zookeeper localhost:2181 --list\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_-1914164691",
+      "id": "20180118-174834_591977078",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "status": "READY"
+    },
+    {
+      "title": "Kafka Producer (CLI)",
+      "text": "%md\nKafka provee de un cliente out-of-the-box tanto para crear mensajes kafka-console-producer como para consumirlos kafka-console-consumer.\nEl producer tiene la siguiente sintaxis:\n\n```sh\nbin/kafka-console-producer.sh --broker-list localhost:9092 --topic helloworld\n```\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-01 19:07:32.526",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eKafka provee de un cliente out-of-the-box tanto para crear mensajes kafka-console-producer como para consumirlos kafka-console-consumer.\u003cbr/\u003eEl producer tiene la siguiente sintaxis:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"sh\"\u003ebin/kafka-console-producer.sh --broker-list localhost:9092 --topic helloworld\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_-1266329930",
+      "id": "20180103-201237_911428127",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "status": "READY"
+    },
+    {
+      "title": "Kafka Consume (CLI)",
+      "text": "%md\nY el consumer:\n```sh\n$KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic helloworld --from-beginning\n```\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-01 19:07:32.527",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eY el consumer:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"sh\"\u003e$KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic helloworld --from-beginning\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_-144625031",
+      "id": "20180103-203000_833544152",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "status": "READY"
+    },
+    {
+      "title": "BANCO SANTANDER ----\u003e\u003e\u003e\u003e Clase Práctica Spark - Kafka: API en Scala -  Producer",
+      "text": "%spark\nimport java.util.Properties\nimport org.apache.kafka.clients.producer._\n\nval  props \u003d new Properties()\nprops.put(\"bootstrap.servers\", \"localhost:9092\")\nprops.put(\"key.serializer\", \"org.apache.kafka.common.serialization.StringSerializer\")\nprops.put(\"value.serializer\", \"org.apache.kafka.common.serialization.StringSerializer\")\n\nval producer \u003d new KafkaProducer[String, String](props)\n   \nval TOPIC\u003d\"topic1\"\n \nfor(i\u003c- 1 to 5000){\n  val record \u003d new ProducerRecord(TOPIC, \"key1\", s\"hello $i\")\n  producer.send(record)\n  val record2 \u003d new ProducerRecord(TOPIC, \"key2\", s\"hello $i\")\n  producer.send(record2)\n  val record3 \u003d new ProducerRecord(TOPIC, \"key3\", s\"hello $i\")\n  producer.send(record3)\n}\n    \nval record \u003d new ProducerRecord(TOPIC, \"key\", \"the end \"+new java.util.Date)\nproducer.send(record)\nproducer.close()\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-15 16:51:37.187",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import java.util.Properties\nimport org.apache.kafka.clients.producer._\n\u001b[1m\u001b[34mprops\u001b[0m: \u001b[1m\u001b[32mjava.util.Properties\u001b[0m \u003d {bootstrap.servers\u003dlocalhost:9092, value.serializer\u003dorg.apache.kafka.common.serialization.StringSerializer, key.serializer\u003dorg.apache.kafka.common.serialization.StringSerializer}\n\u001b[1m\u001b[34mproducer\u001b[0m: \u001b[1m\u001b[32morg.apache.kafka.clients.producer.KafkaProducer[String,String]\u001b[0m \u003d org.apache.kafka.clients.producer.KafkaProducer@7564cd38\n\u001b[1m\u001b[34mTOPIC\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m \u003d topic1\n\u001b[1m\u001b[34mrecord\u001b[0m: \u001b[1m\u001b[32morg.apache.kafka.clients.producer.ProducerRecord[String,String]\u001b[0m \u003d ProducerRecord(topic\u003dtopic1, partition\u003dnull, headers\u003dRecordHeaders(headers \u003d [], isReadOnly \u003d true), key\u003dkey, value\u003dthe end Wed May 12 17:13:24 UTC 2021, timestamp\u003dnull)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_235494598",
+      "id": "20180103-203101_838257189",
+      "dateCreated": "2021-05-01 19:07:21.967",
+      "dateStarted": "2021-05-12 17:13:24.075",
+      "dateFinished": "2021-05-12 17:13:24.272",
+      "status": "FINISHED"
+    },
+    {
+      "title": "API en Scala -  Consumer",
+      "text": "%spark\nimport java.util\nimport org.apache.kafka.clients.consumer.KafkaConsumer\nimport scala.collection.JavaConverters._\nimport java.util.Properties\n\nval TOPIC\u003d\"topic1\"\n\n  val  props \u003d new Properties()\n  props.put(\"bootstrap.servers\", \"localhost:9092\")\n\n  props.put(\"key.deserializer\", \"org.apache.kafka.common.serialization.StringDeserializer\")\n  props.put(\"value.deserializer\", \"org.apache.kafka.common.serialization.StringDeserializer\")\n  props.put(\"group.id\", \"something\")\n\n  val consumer \u003d new KafkaConsumer[String, String](props)\n\n  consumer.subscribe(util.Collections.singletonList(TOPIC))\n\nwhile(true){\n    val records\u003dconsumer.poll(100)\nfor (record\u003c-records.asScala){\n println(record)\n}\n}\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-12 17:21:50.394",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "title": true,
+        "results": {},
+        "enabled": true,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041967_-75944785",
+      "id": "20180118-175639_727781797",
+      "dateCreated": "2021-05-01 19:07:21.968",
+      "status": "READY"
+    },
+    {
+      "text": "%md\nOs recomiendo que os instaléis Conduktor. Es una aplicación gráfica para acceder y administrar un cluster de Kafka.\n[Conduktor](https://www.conduktor.io/download/)\n\nEn las opciones de configurar un clúster tenéis que indicar:\nCluster Name: Vm-EOI-Spark\nBootstrap Servers: localhost:9092\nZookeeper: localhost:2181\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-12 17:25:45.094",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eOs recomiendo que os instaléis Conduktor. Es una aplicación gráfica para acceder y administrar un cluster de Kafka.\u003cbr /\u003e\n\u003ca href\u003d\"https://www.conduktor.io/download/\"\u003eConduktor\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003eEn las opciones de configurar un clúster tenéis que indicar:\u003cbr /\u003e\nCluster Name: Vm-EOI-Spark\u003cbr /\u003e\nBootstrap Servers: localhost:9092\u003cbr /\u003e\nZookeeper: localhost:2181\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1620839352019_1111444020",
+      "id": "paragraph_1620839352019_1111444020",
+      "dateCreated": "2021-05-12 17:09:12.019",
+      "dateStarted": "2021-05-12 17:25:45.096",
+      "dateFinished": "2021-05-12 17:25:45.564",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-12 17:09:10.726",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1620839350726_-1092926433",
+      "id": "paragraph_1620839350726_-1092926433",
+      "dateCreated": "2021-05-12 17:09:10.726",
+      "status": "READY"
+    },
+    {
+      "text": "%md\nEsta práctica la tenemos que ejecutar desde la shell de Pyspark porque Zeppelin dá problemas con el streaming.\nPara ello abre una consola, navega hasta el directorio bin de Spark y abre una consola con la línea de comandos:\n\n```sh\ncd spark-3.1.1-bin-hadoop2.7/bin\n./pyspark --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1 --conf spark.kafka.consumer.cache.capacity\u003d100\n```\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-12 19:39:48.432",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eEsta práctica la tenemos que ejecutar desde la shell de Pyspark porque Zeppelin dá problemas con el streaming.\u003cbr /\u003e\nPara ello abre una consola, navega hasta el directorio bin de Spark y abre una consola con la línea de comandos:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class\u003d\"language-sh\"\u003ecd spark-3.1.1-bin-hadoop2.7/bin\n./pyspark --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1\n\u003c/code\u003e\u003c/pre\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1620758774037_1333452615",
+      "id": "paragraph_1620758774037_1333452615",
+      "dateCreated": "2021-05-11 18:46:14.037",
+      "dateStarted": "2021-05-12 18:59:24.995",
+      "dateFinished": "2021-05-12 18:59:25.001",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\nVamos a ir copiando el ejercicio en esta consola.",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-12 19:00:00.678",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1620845976300_-537110183",
+      "id": "paragraph_1620845976300_-537110183",
+      "dateCreated": "2021-05-12 18:59:36.300",
+      "status": "READY"
+    },
+    {
+      "text": "%pyspark\n# Leer de un topic\ndf \u003d spark.readStream.format(\"kafka\").option(\"kafka.bootstrap.servers\", \"localhost:9092\").option(\"subscribe\", \"topic1\").load()\ndfCast \u003d df.selectExpr(\"CAST(key AS STRING)\", \"CAST(value AS STRING)\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-12 19:00:09.364",
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorHide": false,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.zeppelin.interpreter.InterpreterException: org.apache.zeppelin.interpreter.InterpreterException: Fail to bootstrap pyspark\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.open(LazyOpenInterpreter.java:76)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:668)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:577)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:172)\n\tat org.apache.zeppelin.scheduler.AbstractScheduler.runJob(AbstractScheduler.java:130)\n\tat org.apache.zeppelin.scheduler.FIFOScheduler.lambda$runJobInScheduler$0(FIFOScheduler.java:39)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:748)\nCaused by: org.apache.zeppelin.interpreter.InterpreterException: Fail to bootstrap pyspark\n\tat org.apache.zeppelin.spark.PySparkInterpreter.open(PySparkInterpreter.java:102)\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.open(LazyOpenInterpreter.java:70)\n\t... 8 more\nCaused by: java.io.IOException: Fail to run bootstrap script: python/zeppelin_pyspark.py\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "Traceback (most recent call last):\n  File \"/tmp/1620752821058-0/zeppelin_python.py\", line 152, in \u003cmodule\u003e\n    code \u003d compile(mod, \u0027\u003cstdin\u003e\u0027, \u0027exec\u0027)\nTypeError: required field \"type_ignores\" missing from Module\n\n\tat org.apache.zeppelin.python.PythonInterpreter.bootstrapInterpreter(PythonInterpreter.java:561)\n\tat org.apache.zeppelin.spark.PySparkInterpreter.open(PySparkInterpreter.java:99)\n\t... 9 more\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1619896041968_-1135483705",
+      "id": "20180121-173312_1740737050",
+      "dateCreated": "2021-05-01 19:07:21.968",
+      "dateStarted": "2021-05-11 17:06:52.728",
+      "dateFinished": "2021-05-11 17:07:01.222",
+      "status": "ERROR"
+    },
+    {
+      "text": "%pyspark\n# Leer de un topic incluyendo cabeceras\ndf \u003d spark \\\n  .readStream \\\n  .format(\"kafka\") \\\n  .option(\"kafka.bootstrap.servers\", \"localhost:9082\") \\\n  .option(\"subscribe\", \"topic1\") \\\n  .option(\"includeHeaders\", \"true\") \\\n  .load()\ndf.selectExpr(\"CAST(key AS STRING)\", \"CAST(value AS STRING)\", \"headers\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-11 18:45:37.727",
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorHide": false,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1620753221731_1487088695",
+      "id": "paragraph_1620753221731_1487088695",
+      "dateCreated": "2021-05-11 17:13:41.731",
+      "status": "READY"
+    },
+    {
+      "text": "%pyspark\n# Leer de multiples topics\ndf \u003d spark \\\n  .readStream \\\n  .format(\"kafka\") \\\n  .option(\"kafka.bootstrap.servers\", \"localhost:9082\") \\\n  .option(\"subscribe\", \"topic1,topic2\") \\\n  .load()\ndf.selectExpr(\"CAST(key AS STRING)\", \"CAST(value AS STRING)\")\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-11 18:45:51.847",
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorHide": false,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1620753234765_502690548",
+      "id": "paragraph_1620753234765_502690548",
+      "dateCreated": "2021-05-11 17:13:54.765",
+      "status": "READY"
+    },
+    {
+      "text": "%pyspark\n# Leer topics basándonos en un patrón del nombre\ndf \u003d spark \\\n  .readStream \\\n  .format(\"kafka\") \\\n  .option(\"kafka.bootstrap.servers\", \"localhost:9082\") \\\n  .option(\"subscribePattern\", \"topic.*\") \\\n  .load()\ndf.selectExpr(\"CAST(key AS STRING)\", \"CAST(value AS STRING)\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-11 18:46:00.891",
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorHide": false,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1620753238750_345056654",
+      "id": "paragraph_1620753238750_345056654",
+      "dateCreated": "2021-05-11 17:13:58.750",
+      "status": "READY"
+    },
+    {
+      "text": "%pyspark\n # Start running the query that prints the running counts to the console\nquery \u003d dfCast.writeStream.outputMode(\"append\").format(\"console\").start()\n\nquery.awaitTermination()",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-12 19:01:20.939",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1620064497614_308605337",
+      "id": "paragraph_1620064497614_308605337",
+      "dateCreated": "2021-05-03 17:54:57.614",
+      "status": "READY"
+    },
+    {
+      "text": "%pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-12 19:39:36.059",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1620846422071_-1886092244",
+      "id": "paragraph_1620846422071_-1886092244",
+      "dateCreated": "2021-05-12 19:07:02.071",
+      "status": "READY"
+    },
+    {
+      "text": "%pyspark\n# Write key-value data from a DataFrame to a specific Kafka topic specified in an option\ndf \u003d spark.readStream.format(\"kafka\").option(\"kafka.bootstrap.servers\", \"localhost:9092\").option(\"subscribe\", \"topic1\").load()\n\nds \u003d df.selectExpr(\"CAST(key AS STRING)\", \"CAST(value AS STRING)\").writeStream.format(\"kafka\").option(\"kafka.bootstrap.servers\", \"localhost:9092\").option(\"checkpointLocation\", \"./chk\").option(\"topic\", \"topic2\").start()",
+      "user": "anonymous",
+      "dateUpdated": "2021-05-12 19:44:22.880",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1620848280443_265480771",
+      "id": "paragraph_1620848280443_265480771",
+      "dateCreated": "2021-05-12 19:38:00.443",
+      "status": "READY"
+    }
+  ],
+  "name": "Intro Apache Kafka_v.01",
+  "id": "2G57AWP32",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0-preview1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
