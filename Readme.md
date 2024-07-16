@@ -7,6 +7,7 @@ This repository documents my learning progress as a Data Engineering on Scala wi
 - [Week 1: Scala Collections, Error Handling, Configuration, and More](#week-1-scala-collections-error-handling-configuration-and-more)
 - [Week 2: Apache Spark and Big Data Processing](#week-2-apache-spark-and-big-data-processing)
 - [Week 3: Apache Kafka](#week-3-apache-kafka)
+- [Week 4: Spark Structured Streaming](#week-4-spark-structured-streaming)
 - [Environment Setup](#environment-setup)
 - [Benchmarking JMH](#benchmarking-jmh)
 - [Additional Resources](#additional-resources)
@@ -67,13 +68,81 @@ Walkthrough Apache Spark, focusing on its architecture, data structures, and pro
 
 ## Week 3: Apache Kafka
 This week focus on comprehensive basic and advanced streaming process systems. How to integrate Apache Spark and Kafka together with special attention to Spark Structured Streaming.
-1. **Apache Kafka integration within Spark architecture**
+ **Apache Kafka integration within Spark architecture** ([View Code](src/main/scala/week3/kafka/oss))
    - Environment configuration
    - Producers and consumers
    - Streaming Kafka with Spark
    - Kafka Connect and KSQL
    - Conduktor
-2. **Spark Structured Streaming**
+
+## Week 4: Spark Structured Streaming
+
+During Week 4, the focus was on advanced topics in Spark Structured Streaming, including integration with Apache Kafka, managing late data, and performing various streaming transformations. This week aimed to deepen the understanding of streaming data processing and its practical applications in real-time analytics.
+
+### Topics Covered
+- **Kafka: Delivery Semantics (Confluent):**
+Understanding the different delivery semantics (at-most-once, at-least-once, exactly-once) and how they impact data processing in Kafka.
+
+- **Benchmarking Apache Pulsar, Kafka, and RabbitMQ:**
+Comparative analysis of three popular messaging systems to understand their performance, scalability, and use cases.
+
+- **Apache BookKeeper:**
+An introduction to Apache BookKeeper, a scalable, fault-tolerant, and low-latency storage service optimized for real-time workloads.
+
+- **Raft Consensus Algorithm Viz:**
+Visualizing the Raft consensus algorithm, which is essential for maintaining consistency across distributed systems.
+
+- **In Search of an Understandable Consensus Algorithm (Raft):**
+A detailed paper on the Raft consensus algorithm, providing insights into its design and implementation.
+
+- **CNCF: CloudEvents Specification:**
+Understanding CloudEvents, a specification for describing event data in a common way, which facilitates interoperability across different systems.
+
+- **CNCF: The OpenMessaging Benchmark Framework:**
+A benchmarking framework for evaluating the performance of messaging systems.
+
+### Practical Sessions and Exercises
+- **First Spark Streaming Application:**
+Building the initial application using Spark Streaming to understand the basic concepts and setup.
+
+- **Streaming Observations and Listeners:**
+Implementing and utilizing listeners to monitor streaming queries and understand their progress.
+
+- **Streaming with Retries:**
+Handling failures and implementing retry mechanisms in streaming applications to ensure data integrity.
+
+- **Transformations: Streaming DataLake:**
+Basic and Advanced transformations on streaming data and storing results in a Delta Lake.
+
+- **Streaming Kafka: Guarantees (AMO, ALO, EO):**
+Exploring different Kafka delivery guarantees and their implications for streaming data processing.
+
+- **Streaming Deduplication without Watermark:**
+Techniques for deduplicating streaming data in the absence of watermarks.
+
+- **Example of Streaming for Managing Duplicates using Watermarks:**
+Practical example of using watermarks to manage and deduplicate streaming data.
+
+- **Structured Streaming: Joins with Broadcast:**
+Performing efficient joins between streaming data and static datasets using broadcast joins.
+
+- **Spark Streaming: Window and Watermark:**
+Using windows and watermarks to manage late data and compute aggregations over time.
+
+- **Streaming Stateful Operations:**
+Implementing stateful transformations to maintain and update state across streaming data.
+
+### Summary of IoT Smart Farm Project
+The IoT Smart Farm project is a comprehensive implementation of real-time data processing using Spark Structured Streaming and Kafka. It involves monitoring a smart farm by processing data from sensors measuring CO2 levels, temperature, humidity, and soil moisture. The project includes:
+
+- Real-time Data Processing: Using Spark Structured Streaming to process and analyze sensor data in real-time.
+- Kafka Integration: Consuming sensor data from Kafka topics.
+- Delta Lake: Storing processed data with Delta Lake for ACID transactions and efficient data management.
+- Zone Enrichment: Enhancing sensor data by joining with static zone data from a JSON file.
+- Custom Streaming Query Listener: Monitoring the progress and status of streaming queries.
+- Watermark and Windowing: Handling late data and computing windowed aggregations.
+- Error Monitoring: Tracking and logging defective sensor data using accumulators.
+**You can find the full project repository [here](https://github.com/Rafavermar/Scala-Spark-Kafka-Iot-Monitoring).**
 
 ## Using Scala Class Objects and Worksheets
 Scala class objects serve as single instances of their definitions and are often used to store utility functions and constants. They provide a way to group similar functions or properties under a single namespace, which can enhance the modularity and reusability of your code.
